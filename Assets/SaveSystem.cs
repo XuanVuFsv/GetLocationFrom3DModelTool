@@ -9,8 +9,8 @@ public class SaveSystem
 
     public static void Init()
     {
-        //Debug.Log(Application.dataPath);
-        //Debug.Log(Application.persistentDataPath);
+        Debug.Log(Application.dataPath);
+        Debug.Log(Application.persistentDataPath);
 
         if (!Directory.Exists(SAVE_FOLDER))
         {

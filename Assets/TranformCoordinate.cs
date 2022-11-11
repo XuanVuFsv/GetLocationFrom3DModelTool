@@ -93,24 +93,24 @@ public class TranformCoordinate : MonoBehaviour
     #endregion
 
     #region Location
-    public bool baseFromOtherLocation = false;
-    public Vector2 mediate;
-    public Vector2 normal;
-    public double alphaFromNorth;
-    public Vector3 baseWPosition;
+    bool baseFromOtherLocation = false;
+    //public Vector2 mediate;
+    //public Vector2 normal;
+    //public double alphaFromNorth;
+    Vector3 baseWPosition;
     public float EarthRadius = 6378.1f; //#Radius of the Earth m
     public double yGround = 0;
     public Node[] listGPSLocation;
     public Node defaultGPSLocation = new Node(10.776454755139342, 0.0125631501145227, 106.70312572937577);
-    Vector3 prevPoint;
+    //Vector3 prevPoint;
     bool isFirstLocation = true;
     #endregion
 
     [Header("Create multi object from base object")]
-    public List<double> cloneAngles = new List<double>(); //heading
-    public List<double> cloneDistances = new List<double>(); //distanceKm
-    public GameObject baseMeshObject;
-    public GameObject baseObject;
+    List<double> cloneAngles = new List<double>(); //heading
+    List<double> cloneDistances = new List<double>(); //distanceKm
+    GameObject baseMeshObject;
+    GameObject baseObject;
 
     //[Header("Calculate Symmetric location")]
     //public Node[] listLocation1, listLocation2;
@@ -119,8 +119,8 @@ public class TranformCoordinate : MonoBehaviour
 
     void Start()
     {
-        mediate = new Vector2(4397, 3476);
-        normal = new Vector2(-365.912f, -365.375f);
+        //mediate = new Vector2(4397, 3476);
+        //normal = new Vector2(-365.912f, -365.375f);
         SaveSystem.Init();
         if (mode == Mode.ConvertAll)
         {
@@ -224,7 +224,7 @@ public class TranformCoordinate : MonoBehaviour
         foreach (int index in listIndex)
         {
             i++;
-            Node baseSymetric;
+            //Node baseSymetric;
 
             double newY = listGPSLocation[index - 1].node[1] * 1000;
 

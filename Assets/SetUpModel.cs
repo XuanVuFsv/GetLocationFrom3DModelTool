@@ -12,6 +12,7 @@ public class SetUpModel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        parent = transform;
         n = parent.childCount;
     }
 
