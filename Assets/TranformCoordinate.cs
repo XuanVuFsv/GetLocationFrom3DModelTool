@@ -62,7 +62,7 @@ public class TranformCoordinate : MonoBehaviour
     public Mode mode;
     [Header("Convert all verticle's object to long-lat value")]
     #region Tools
-    public float scale;
+    public float scale = 0.02647058823f;// Ben Thanh 90m/3400unit
     public string strIndex;
     public int[] listIndex;
     public int fromIndex, toIndex;
@@ -93,7 +93,7 @@ public class TranformCoordinate : MonoBehaviour
     #endregion
 
     #region Location
-    bool baseFromOtherLocation = false;
+    public bool baseFromOtherLocation = true;
     //public Vector2 mediate;
     //public Vector2 normal;
     //public double alphaFromNorth;
@@ -101,7 +101,8 @@ public class TranformCoordinate : MonoBehaviour
     public float EarthRadius = 6378.1f; //#Radius of the Earth m
     public double yGround = 0;
     public Node[] listGPSLocation;
-    public Node defaultGPSLocation = new Node(10.776454755139342, 0.0125631501145227, 106.70312572937577);
+    public Node defaultGPSLocation = new Node(10.772985184831029, 0.00521848852, 106.6981250024237); //Ben Thanh y-km
+    //public Node defaultGPSLocation = new Node(10.776454755139342, 0.0125631501145227, 106.70312572937577); //Nha hat
     //Vector3 prevPoint;
     bool isFirstLocation = true;
     #endregion
@@ -119,6 +120,8 @@ public class TranformCoordinate : MonoBehaviour
 
     void Start()
     {
+        scale = 0.02647058823f;
+        defaultGPSLocation = new Node(10.772985184831029, 0.00521848852, 106.6981250024237);
         //mediate = new Vector2(4397, 3476);
         //normal = new Vector2(-365.912f, -365.375f);
         SaveSystem.Init();
