@@ -87,7 +87,7 @@ public class TranformCoordinate : MonoBehaviour
     public GameObject verticelsPoint;
     public Transform parentPoint;
     Vector3[] vertices;
-    Vector3[] wVerticles;
+    public Vector3[] wVerticles;
     [SerializeField]
     Mesh mesh;
     #endregion
@@ -97,7 +97,7 @@ public class TranformCoordinate : MonoBehaviour
     //public Vector2 mediate;
     //public Vector2 normal;
     //public double alphaFromNorth;
-    Vector3 baseWPosition;
+    public Vector3 baseWPosition = new Vector3(-2932.167f, 197.2427f, 4816.456f);
     public float EarthRadius = 6378.1f; //#Radius of the Earth m
     public double yGround = 0;
     public Node[] listGPSLocation;
@@ -120,8 +120,9 @@ public class TranformCoordinate : MonoBehaviour
 
     void Start()
     {
+        baseWPosition = new Vector3(-2932.167f, 197.2427f, 4816.456f);
         scale = 0.02647058823f;
-        defaultGPSLocation = new Node(10.772985184831029, 0.00521848852, 106.6981250024237);
+        defaultGPSLocation = new Node(10.773070955337595, 0.00521848852, 106.69810670721084);
         //mediate = new Vector2(4397, 3476);
         //normal = new Vector2(-365.912f, -365.375f);
         SaveSystem.Init();
@@ -327,11 +328,14 @@ public class TranformCoordinate : MonoBehaviour
                 Vector3 newVector3 = verticle - wVerticles[0];
                 Vector3 newVector2 = new Vector2(newVector3.x, newVector3.z);
                 float angle = Vector2.SignedAngle(newVector2, Vector2.up);
+                Debug.Log(angle);
+
                 if (angle < 0)
                 {
                     angle = 360 - angle * -1;
                 }
 
+                Debug.Log(angle);
                 double distance = Math.Sqrt(Math.Pow(verticle.x - wVerticles[0].x, 2) + Math.Pow(verticle.z - wVerticles[0].z, 2)) * scale / 1000;
 
                 //Debug.Log((i + 1).ToString() + "with 1: " + angle + ", " + (distance * 1000).ToString());
