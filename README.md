@@ -12,7 +12,7 @@ Convert the Cartesian coordinate vertices of a 3D model to GPS data to render th
 ![image](https://github.com/XuanVuFsv/GetLocationFrom3DModelTool/assets/58604939/bc85d230-dd91-4278-80f4-4d763097edae)
 ![image](https://github.com/XuanVuFsv/GetLocationFrom3DModelTool/assets/58604939/f37fa674-a413-4061-b304-6b9259f97fe2)
 
-**Result after using ArcGIS JS with data from Unity Editor:**
+**Results after using ArcGIS JS with data from Unity Editor:**
 
 ![image](https://github.com/XuanVuFsv/GetLocationFrom3DModelTool/assets/58604939/e38f4c14-a923-4872-8bc1-64d2f36ed19a)
 ![image](https://github.com/XuanVuFsv/GetLocationFrom3DModelTool/assets/58604939/faf80236-599e-467e-96bc-ba27be53c419)
